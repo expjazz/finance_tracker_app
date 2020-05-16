@@ -1,0 +1,15 @@
+  <%= render 'layouts/messages'%>
+
+  <div class="row">
+    <div class="col-12">
+        <% if @stock %>
+  <div class="card flex-row">
+    <div class= 'mx-2'><strong>Symbol: </strong> <%= @stock.ticker%></div>
+     <div class= 'mx-2'>   <strong>Name: </strong> <%= @stock.name%></div>
+   <div class= 'mx-2'> <strong>Price: </strong> <%= @stock.price%></div>
+
+
+  </div>
+        <% end %>
+    </div>
+  </div>

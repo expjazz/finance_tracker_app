@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-9">
+    <h1>My Portfolio</h1>
+      <div class="search-area pt-5"></div>
+    <h3 class="h3">Search Stocks</h3>
+    <%= form_with url: search_stock_path, method: :get do %>
+        <div class="form-group row">
+            <div class="col-9 pr-0">
+                <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg"%>
+            </div>
+            <div class="col-3 pl-0">
+                <%= button_tag type: :submit, class: "btn btn-dark btn-lg" do %>
+                    <%= fa_icon 'search' %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+  </div>
+  </div>
+  <div id="results">
+    <%= render 'users/result'%>
+  </div>
+
+
+
+
