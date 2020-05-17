@@ -1,4 +1,4 @@
-  <%= render 'layouts/messages'%>
+  <%= render 'layouts/messages' if alert %>
 
   <div class="row">
     <div class="col-12">
@@ -7,7 +7,8 @@
     <div class= 'mx-2'><strong>Symbol: </strong> <%= @stock.ticker%></div>
      <div class= 'mx-2'>   <strong>Name: </strong> <%= @stock.name%></div>
    <div class= 'mx-2'> <strong>Price: </strong> <%= @stock.price%></div>
-
+   
+   <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker), class: 'btn btn-success', method: :post%>
 
   </div>
         <% end %>
